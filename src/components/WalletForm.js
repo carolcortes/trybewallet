@@ -42,7 +42,6 @@ class WalletForm extends Component {
 WalletForm.propTypes = {
   getCurrencies: PropTypes.func,
   currencies: PropTypes.string,
-  filter: PropTypes.func,
 }.isRequired;
 
 const mapStateToProps = (store) => ({
