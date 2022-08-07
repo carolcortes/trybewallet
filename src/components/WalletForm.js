@@ -85,7 +85,12 @@ class WalletForm extends Component {
             value={ currency }
           >
             { currencies.map((currencie) => (
-              <option key={ currencie }>{ currencie }</option>
+              <option
+                key={ currencie }
+                data-testid="currency-option"
+              >
+                { currencie }
+              </option>
             ))}
           </select>
           <select
@@ -94,9 +99,9 @@ class WalletForm extends Component {
             onChange={ this.onInputChange }
             value={ method }
           >
-            <option>Dinheiro</option>
-            <option>Cartão de crédito</option>
-            <option>Cartão de débito</option>
+            <option data-testid="method-option">Dinheiro</option>
+            <option data-testid="method-option">Cartão de crédito</option>
+            <option data-testid="method-option">Cartão de débito</option>
           </select>
           <select
             name="tag"
@@ -104,11 +109,11 @@ class WalletForm extends Component {
             onChange={ this.onInputChange }
             value={ tag }
           >
-            <option>Alimentação</option>
-            <option>Lazer</option>
-            <option>Trabalho</option>
-            <option>Transporte</option>
-            <option>Saúde</option>
+            <option data-testid="tag-option">Alimentação</option>
+            <option data-testid="tag-option">Lazer</option>
+            <option data-testid="tag-option">Trabalho</option>
+            <option data-testid="tag-option">Transporte</option>
+            <option data-testid="tag-option">Saúde</option>
           </select>
           <button
             type="button"
