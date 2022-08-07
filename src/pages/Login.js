@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { userEmail } from '../redux/actions';
+import '../styles/Login.css';
 
 class Login extends React.Component {
   constructor() {
@@ -38,28 +39,32 @@ class Login extends React.Component {
   render() {
     const { invalidPassword, invalidEmail, email } = this.state;
     return (
-      <form onSubmit={ this.onBtnClick }>
-        <input
-          type="email"
-          data-testid="email-input"
-          placeholder="E-mail"
-          onChange={ this.onEmailChange }
-          value={ email }
-        />
-        <input
-          type="password"
-          data-testid="password-input"
-          placeholder="Senha"
-          onChange={ this.onPasswordChange }
-        />
-        <button
-          type="button"
-          onClick={ this.onBtnClick }
-          disabled={ invalidEmail ? true : invalidPassword }
-        >
-          Entrar
-        </button>
-      </form>
+      <div>
+        <h1 className="header">TrybeWallet</h1>
+        <form onSubmit={ this.onBtnClick }>
+          <h3 className="login">LOGIN</h3>
+          <input
+            type="email"
+            data-testid="email-input"
+            placeholder="E-mail"
+            onChange={ this.onEmailChange }
+            value={ email }
+          />
+          <input
+            type="password"
+            data-testid="password-input"
+            placeholder="Senha"
+            onChange={ this.onPasswordChange }
+          />
+          <button
+            type="button"
+            onClick={ this.onBtnClick }
+            disabled={ invalidEmail ? true : invalidPassword }
+          >
+            Entrar
+          </button>
+        </form>
+      </div>
     );
   }
 }

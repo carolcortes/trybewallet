@@ -16,6 +16,7 @@ class Header extends Component {
           {' '}
           <span data-testid="total-field">
             { (expenses.length ? totalExpenses : 0).toFixed(2) }
+            {' '}
           </span>
           <span data-testid="header-currency-field">BRL</span>
         </p>
