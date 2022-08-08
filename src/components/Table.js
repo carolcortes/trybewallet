@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { FaEdit, FaTrashAlt } from 'react-icons/fa';
 import { deleteExpense, editExpense } from '../redux/actions';
 import '../styles/Table.css';
 
@@ -52,14 +53,14 @@ class Table extends Component {
                     data-testid="edit-btn"
                     onClick={ () => this.editExpenseBtn(id) }
                   >
-                    Editar
+                    <FaEdit />
                   </button>
                   <button
                     type="button"
                     data-testid="delete-btn"
                     onClick={ () => this.deleteExpenseBtn(id) }
                   >
-                    Excluir
+                    <FaTrashAlt />
                   </button>
                 </td>
               </tr>

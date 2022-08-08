@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { FaUserAlt, FaWallet } from 'react-icons/fa';
 import PropTypes from 'prop-types';
 import '../styles/Header.css';
 
@@ -10,8 +11,16 @@ class Header extends Component {
       acc + Number(value) * Number(exchangeRates[currency].ask)), 0);
     return (
       <div className="wallet-header">
-        <h1>TrybeWallet</h1>
-        <p data-testid="email-field">{ email }</p>
+        <h1>
+          <FaWallet />
+          { ' ' }
+          TrybeWallet
+        </h1>
+        <p data-testid="email-field">
+          <FaUserAlt />
+          {' '}
+          { email }
+        </p>
         <p className="total-expense">
           Despesa total:
           {' '}

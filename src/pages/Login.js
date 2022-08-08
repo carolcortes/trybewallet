@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { FaUserAlt, FaLock } from 'react-icons/fa';
 import { userEmail } from '../redux/actions';
 import '../styles/Login.css';
 
@@ -43,21 +44,29 @@ class Login extends React.Component {
         <h1 className="header">TrybeWallet</h1>
         <form onSubmit={ this.onBtnClick } className="login-form">
           <h3 className="login">LOGIN</h3>
-          <input
-            type="email"
-            data-testid="email-input"
-            placeholder="E-mail"
-            onChange={ this.onEmailChange }
-            value={ email }
-            className="login-input"
-          />
-          <input
-            type="password"
-            data-testid="password-input"
-            placeholder="Senha"
-            onChange={ this.onPasswordChange }
-            className="login-input"
-          />
+          <label htmlFor="email">
+            <FaUserAlt />
+            <input
+              id="email"
+              type="email"
+              data-testid="email-input"
+              placeholder="E-mail"
+              onChange={ this.onEmailChange }
+              value={ email }
+              className="login-input"
+            />
+          </label>
+          <label htmlFor="password">
+            <FaLock />
+            <input
+              id="password"
+              type="password"
+              data-testid="password-input"
+              placeholder="Senha"
+              onChange={ this.onPasswordChange }
+              className="login-input"
+            />
+          </label>
           <button
             type="button"
             onClick={ this.onBtnClick }
