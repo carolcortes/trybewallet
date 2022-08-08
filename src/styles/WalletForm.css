@@ -9,41 +9,41 @@
   padding: 2.5rem;
 }
 
-.wallet, input {
+.wallet,input {
   background: none;
   border: 2px solid #d1d4d3;
-	border-radius: 10px;
+  border-radius: 10px;
   font-size: 16px;
-	font-weight: 700;
-	padding: 10px;
-	padding-left: 24px;
-	width: 85%;
+  font-weight: 700;
+  padding: 10px;
+  padding-left: 24px;
+  width: 85%;
 }
 
 .wallet, select {
-	background: none;
-	border: 2px solid #d1d4d3;
-	border-radius: 10px;
+  background: none;
+  border: 2px solid #d1d4d3;
+  border-radius: 10px;
   font-size: 16px;
-	font-weight: 700;
-	padding: 10px;
-	padding-left: 24px;
-	width: 85%;
+  font-weight: 700;
+  padding: 10px;
+  padding-left: 24px;
+  width: 85%;
 }
 
 .wallet, button {
   border: 1px solid #017c80;
   border-radius: 10px;
-	color: #017c80;
+  color: #017c80;
   font-size: 16px;
   font-weight: 700;
   height: fit-content;
-  padding: 10px;
   margin-left: 2px;
+  padding: 10px;
   width: fit-content;
 }
 
-.wallet, button:hover {
+.wallet,button:hover {
   background-color: #3ba38d;
   color: white;
 }
