@@ -1,49 +1,49 @@
 .wallet-form {
-  display: flex;
   align-items: center;
   background-color: white;
-  padding: 2.5rem;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  gap: 30px;
   border-radius: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  display: flex;
+  gap: 30px;
   margin-bottom: 20px;
+  padding: 2.5rem;
 }
 
 .wallet, input {
+  background: none;
+  border: 2px solid #d1d4d3;
 	border-radius: 10px;
-	border: 2px solid #d1d4d3;
-	background: none;
+  font-size: 16px;
+	font-weight: 700;
 	padding: 10px;
 	padding-left: 24px;
-	font-weight: 700;
 	width: 85%;
-  font-size: 16px;
 }
 
 .wallet, select {
-	border-radius: 10px;
-	border: 2px solid #d1d4d3;
 	background: none;
+	border: 2px solid #d1d4d3;
+	border-radius: 10px;
+  font-size: 16px;
+	font-weight: 700;
 	padding: 10px;
 	padding-left: 24px;
-	font-weight: 700;
 	width: 85%;
-  font-size: 16px;
 }
 
 .wallet, button {
-  font-size: 16px;
-	color: #017C80;
-  width: fit-content;
-  height: fit-content;
-  font-weight: 700;
-  padding: 10px;
-  border: 1px solid #017C80;
+  border: 1px solid #017c80;
   border-radius: 10px;
+	color: #017c80;
+  font-size: 16px;
+  font-weight: 700;
+  height: fit-content;
+  padding: 10px;
   margin-left: 2px;
+  width: fit-content;
 }
 
 .wallet, button:hover {
-  background-color: #3BA38D;
-  color: #ffffff;
+  background-color: #3ba38d;
+  color: white;
 }
