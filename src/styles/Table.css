@@ -1,0 +1,35 @@
+table {
+  align-items: center;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  gap: 30px;
+  border-radius: none;
+  margin-bottom: 20px;
+  width: 100%;
+  background: linear-gradient(45deg, #85f3ef, #e5f0ef, #85f3ef);
+}
+
+td {
+  padding: 10px;
+	background-color: rgba(255,255,255,0.2);
+}
+
+thead, th {
+	background-color: #3BA38D;
+  text-align: center;
+  padding: 10px;
+  max-width: 100px;
+}
+
+tbody, tr:hover, td:hover {
+  background-color: rgba(34, 30, 30, 0.233);
+}
+
+tbody, td:before {
+  background-color: rgba(255,255,255,0.2);
+}
+
+table, button {
+  margin: 2px;
+  align-items: center;
+}

@@ -1,0 +1,25 @@
+.wallet-header {
+  display: flex;
+  flex-direction: column;
+  margin: 30px;
+  padding: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 5px;
+  gap: 10px;
+  background: linear-gradient(90deg, #1e908700, #92dea000);
+  background-color: white;
+  width: fit-content;
+  border: 1px solid gray;
+}
+
+h1 {
+  text-shadow: -1px -1px 0px #FFF;
+}
+
+p {
+  font-size: 18px;
+}
+
+.total-expense {
+  font-weight: 700;
+}

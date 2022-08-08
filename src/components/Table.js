@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { deleteExpense, editExpense } from '../redux/actions';
+import '../styles/Table.css';
 
 class Table extends Component {
   editExpenseBtn = (id) => {

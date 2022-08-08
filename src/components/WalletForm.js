@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { deleteExpense, userExpenses, walletCurrencies } from '../redux/actions';
+import '../styles/WalletForm.css';
 
 class WalletForm extends Component {
   constructor() {
@@ -9,8 +10,8 @@ class WalletForm extends Component {
     this.state = {
       value: '',
       currency: 'USD',
-      method: '',
-      tag: '',
+      method: 'Dinheiro',
+      tag: 'Alimentação',
       description: '',
     };
   }
@@ -31,7 +32,7 @@ class WalletForm extends Component {
     const { addExpense, expenses } = this.props;
     addExpense({ ...this.state, id: expenses.length });
     this.setState({
-      value: '', description: '', currency: 'USD', method: 'Dinheiro', tag: 'Alimentação',
+      value: '', description: '', currency: 'USD', method: 'Dinheiro',
     });
   }
 
@@ -60,7 +61,7 @@ class WalletForm extends Component {
 
     return (
       <div>
-        <form onSubmit={ this.addExpensesBtn }>
+        <form className="wallet-form" onSubmit={ this.addExpensesBtn }>
           <input
             type="number"
             name="value"

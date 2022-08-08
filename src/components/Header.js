@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import '../styles/Header.css';
 
 class Header extends Component {
   render() {
@@ -8,10 +9,10 @@ class Header extends Component {
     const totalExpenses = expenses.reduce((acc, { value, currency, exchangeRates }) => (
       acc + Number(value) * Number(exchangeRates[currency].ask)), 0);
     return (
-      <div>
+      <div className="wallet-header">
         <h1>TrybeWallet</h1>
         <p data-testid="email-field">{ email }</p>
-        <p>
+        <p className="total-expense">
           Despesa total:
           {' '}
           <span data-testid="total-field">

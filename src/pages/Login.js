@@ -41,7 +41,7 @@ class Login extends React.Component {
     return (
       <div>
         <h1 className="header">TrybeWallet</h1>
-        <form onSubmit={ this.onBtnClick }>
+        <form onSubmit={ this.onBtnClick } className="login-form">
           <h3 className="login">LOGIN</h3>
           <input
             type="email"
@@ -49,17 +49,20 @@ class Login extends React.Component {
             placeholder="E-mail"
             onChange={ this.onEmailChange }
             value={ email }
+            className="login-input"
           />
           <input
             type="password"
             data-testid="password-input"
             placeholder="Senha"
             onChange={ this.onPasswordChange }
+            className="login-input"
           />
           <button
             type="button"
             onClick={ this.onBtnClick }
             disabled={ invalidEmail ? true : invalidPassword }
+            className="login-button"
           >
             Entrar
           </button>
