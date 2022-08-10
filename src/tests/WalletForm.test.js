@@ -49,19 +49,25 @@ describe('Testes do componente WalletForm', () => {
   })
 
   it('A despesa criada é salva no estado do Redux', async () => {
+    const initialState = {
+      wallet: {
+        currencies: [],
+        expenses: [],
+      }
+    }
+
     jest.spyOn(global, 'fetch').mockResolvedValue({
       json: jest.fn().mockResolvedValue(mockData),
     })
 
-    const { store } = renderWithRouterAndRedux(<Wallet />)
-
-    await waitFor(() => expect(fetch).toHaveBeenCalled())
+    const { store } = renderWithRouterAndRedux(<Wallet />, { initialState })
+    await waitFor(() => expect(fetch).toHaveBeenCalled());
 
     const valueInput = screen.getByTestId('value-input');
     const descriptionInput = screen.getByTestId('description-input');
     const currencyInput = screen.getByTestId('currency-input');
     const methodInput = screen.getByTestId('method-input');
-    const tagInput = screen.getAllByTestId('tag-input');
+    const tagInput = screen.getByTestId('tag-input');
     const addExpenseBtn = screen.getByRole('button', { name: /Adicionar despesa/i })
 
     userEvent.type(valueInput, '2');
@@ -70,11 +76,54 @@ describe('Testes do componente WalletForm', () => {
     userEvent.selectOptions(methodInput, 'Dinheiro');
     userEvent.selectOptions(tagInput, 'Lazer');
     userEvent.click(addExpenseBtn);
+    await waitFor(() => expect(fetch).toHaveBeenCalled());
 
     expect(valueInput.value).toBe('');
     expect(descriptionInput.value).toBe('')
 
     const { wallet } = store.getState();
     expect(wallet.expenses).toHaveLength(1)
+  })
+
+  it('As informações podem ser editadas no formulário', async () => {
+    const initialState = {
+      wallet: {
+        currencies: [],
+        expenses: [],
+      }
+    }
+
+    jest.spyOn(global, 'fetch').mockResolvedValue({
+      json: jest.fn().mockResolvedValue(mockData),
+     });
+    
+    renderWithRouterAndRedux(<Wallet />, { initialState })
+    await waitFor(() => expect(fetch).toHaveBeenCalled());
+
+    const valueInput = screen.getByTestId('value-input');
+    const descriptionInput = screen.getByTestId('description-input');
+    const currencyInput = screen.getByTestId('currency-input');
+    const methodInput = screen.getByTestId('method-input');
+    const tagInput = screen.getByTestId('tag-input');
+    const addExpenseBtn = screen.getByRole('button', { name: /Adicionar despesa/ })
+
+    userEvent.type(valueInput, '2');
+    userEvent.type(descriptionInput, 'Gastos');
+    userEvent.selectOptions(currencyInput, 'EUR');
+    userEvent.selectOptions(methodInput, 'Dinheiro');
+    userEvent.selectOptions(tagInput, 'Transporte');
+    userEvent.click(addExpenseBtn);
+    await waitFor(() => expect(fetch).toHaveBeenCalled());
+
+    const editBtn = screen.getByTestId('edit-btn');
+    expect(editBtn).toBeDefined();
+    userEvent.click(editBtn);
+    await waitFor(() => expect(fetch).toHaveBeenCalled());
+
+    const EditExpenseBtn = screen.getByRole('button', { name: /Editar despesa/ })
+
+    userEvent.type(valueInput, 'Outros Gastos');
+    userEvent.click(EditExpenseBtn);
+    await waitFor(() => expect(fetch).toHaveBeenCalled());
   })
 })

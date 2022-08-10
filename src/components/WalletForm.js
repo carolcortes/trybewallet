@@ -39,7 +39,6 @@ class WalletForm extends Component {
   EditExpenseBtn = () => {
     const { expenses, idToEdit, getDeletedExpense, addExpense } = this.props;
     const { value, description, currency, method, tag } = this.state;
-    console.log(expenses);
 
     const updatedExpense = {
       value: value || expenses[idToEdit].value,
